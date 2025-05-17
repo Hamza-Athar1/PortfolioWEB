@@ -1,0 +1,31 @@
+.navbar {
+  background-color: transparent; /* Adjust the navbar background color */
+  
+}
+
+.nav-link.custom-link {
+  margin-top: 10px;
+  color: white; /* Ensure this is applied */
+}
+
+.nav-link.custom-link:hover {
+  color: blue; /* Optional: Change color on hover */
+} 
+
+.fade-in-section {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+}
+.navbar-light .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Optional: Adjust the background color of the toggler button itself */
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.5); /* Lighten the border */
+  margin-left: auto;
+}
