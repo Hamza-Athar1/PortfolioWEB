@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, FormEvent, FC } from "react";
+import { useState, ChangeEvent, FormEvent, FC } from "react";
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";

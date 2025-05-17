@@ -1,4 +1,4 @@
-import { memo, useState, FC } from "react";
+import { memo, FC } from "react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { Link } from "react-scroll"; // Import Link from react-scroll
 import "./componentStyles/layout.css";
@@ -9,7 +9,6 @@ import "animate.css/animate.min.css";
 interface LayoutProps {}
 
 const Layout: FC<LayoutProps> = () => {
-  const [selected, setSelected] = useState<string>("Home");
   const sections: string[] = [
     "Home",
     "About",
@@ -56,7 +55,6 @@ const Layout: FC<LayoutProps> = () => {
                     offset={-70}
                     className="nav-link"
                     activeClass="active"
-                    onSetActive={() => setSelected(sec)}
                   >
                     {sec}
                   </Link>
