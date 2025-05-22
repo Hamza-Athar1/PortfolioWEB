@@ -9,9 +9,11 @@
 body {
   font-size: var(--primary-size);
   background-color: rgba(0, 0, 0, 0.96);
+  overflow-x: hidden;
 }
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 nav {
   cursor: pointer;

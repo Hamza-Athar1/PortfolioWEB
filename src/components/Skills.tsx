@@ -75,25 +75,26 @@ export const Skills: FC = () => {
                     borderRadius: "0.5rem",
                     boxShadow:
                       hovered === `${category}-${skill.name}`
-                        ? "0 8px 20px rgba(0,0,0,0.7)"
-                        : "0 4px 12px rgba(0,0,0,0.5)",
-                    padding: "1rem",
+                        ? "0 12px 30px rgba(0,0,0,0.8)"
+                        : "0 6px 15px rgba(0,0,0,0.5)",
+                    padding: "1.5rem",
                     textAlign: "center" as const,
                     transform:
                       hovered === `${category}-${skill.name}`
-                        ? "translateY(-5px)"
-                        : "translateY(0)",
+                        ? "scale(1.05)"
+                        : "scale(1)",
                     transition:
-                      "transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out",
+                      "transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background 0.3s ease-in-out",
                   }}
                 >
-                  <h5 className="fw-bold mb-2">{skill.name}</h5>
+                  <h5 className="fw-bold mb-3">{skill.name}</h5>
                   <div
                     className="progress mb-2"
                     style={{
-                      height: "1rem",
+                      height: "1.2rem",
                       borderRadius: "0.5rem",
                       backgroundColor: "#343a40",
+                      overflow: "hidden",
                     }}
                   >
                     <div
@@ -103,15 +104,36 @@ export const Skills: FC = () => {
                       role="progressbar"
                       style={{
                         width: `${skill.level}%`,
-                        transition: "width 1s ease-in-out",
+                        background: `linear-gradient(90deg, #0d6efd, #6610f2)`,
+                        animation: "gradient-animation 3s infinite",
+                        boxShadow:
+                          hovered === `${category}-${skill.name}`
+                            ? "0 0 10px #0d6efd"
+                            : "none",
+                        transition:
+                          "width 1s ease-in-out, box-shadow 0.3s ease-in-out",
                       }}
                       aria-valuenow={skill.level}
                       aria-valuemin={0}
                       aria-valuemax={100}
+                      title={`Skill Level: ${skill.level}%`}
                     >
                       {skill.level}%
                     </div>
                   </div>
+                  <p
+                    style={{
+                      fontSize: "0.9rem",
+                      color: "#adb5bd",
+                      marginTop: "0.5rem",
+                    }}
+                  >
+                    {skill.level >= 85
+                      ? "Expert"
+                      : skill.level >= 70
+                      ? "Intermediate"
+                      : "Beginner"}
+                  </p>
                 </div>
               </div>
             ))}
@@ -122,3 +144,10 @@ export const Skills: FC = () => {
   );
 };
 export default Skills;
+
+// Add this CSS to your global styles or a CSS file
+// @keyframes gradient-animation {
+//   0% { background-position: 0% 50%; }
+//   50% { background-position: 100% 50%; }
+//   100% { background-position: 0% 50%; }
+// }
