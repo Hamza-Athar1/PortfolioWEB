@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { Link } from "react-scroll"; // Import Link from react-scroll
 import "./componentStyles/layout.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.min.js";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "animate.css/animate.min.css";
 
 interface LayoutProps {}
@@ -18,6 +18,13 @@ const Layout: FC<LayoutProps> = () => {
     "Hobbies",
     "Contact",
   ];
+
+  const handleNavLinkClick = () => {
+    const navbarCollapse = document.getElementById("navbarNav");
+    if (navbarCollapse) {
+      navbarCollapse.classList.remove("show");
+    }
+  };
 
   return (
     <>
@@ -55,6 +62,7 @@ const Layout: FC<LayoutProps> = () => {
                     offset={-70}
                     className="nav-link"
                     activeClass="active"
+                    onClick={handleNavLinkClick}
                   >
                     {sec}
                   </Link>
